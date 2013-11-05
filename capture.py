@@ -3,11 +3,11 @@
 from subprocess import Popen, PIPE
 
 def urltoimg(url):
-    Popen("export PATH=$PATH:/app/bin/", stdout=PIPE, shell=True).stdout.read()
+    std = Popen("export PATH=$PATH:/app/bin/", stdout=PIPE, shell=True).stdout.read()
     stdout = Popen("phantomjs screencapture.js "+url, stdout=PIPE, shell=True).stdout.read()
 
 def main(url):
 	urltoimg(url)
 
 if __name__ == '__main__':
-	main('http://yahoo.in')
+	main('http://google.in')
