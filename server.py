@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-from dependencies import web
+import web
 from capture import urltoimg
 
 #import xml.etree.ElementTree as ET
