@@ -4,7 +4,6 @@ from dependencies import web
 from capture import urltoimg
 
 #import xml.etree.ElementTree as ET
-
 # tree = ET.parse('acess_key.xml')
 # root = tree.getroot()
 

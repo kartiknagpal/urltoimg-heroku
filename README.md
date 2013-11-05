@@ -8,5 +8,7 @@
 + python server.py
 
 ```python
-http://0.0.0.0:8080/urltoimg?url=https://github.com/kartiknagpal/urlToImage
+http://kartik.herokuapp.com/urltoimg?url=https://devcenter.heroku.com/articles/buildpacks
 ```
+
+[A demo here](http://kartik.herokuapp.com/urltoimg?url=https://www.google.co.in/)
