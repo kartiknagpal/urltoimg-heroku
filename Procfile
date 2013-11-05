@@ -1,0 +1,1 @@
+web: python2 server.py 8080
