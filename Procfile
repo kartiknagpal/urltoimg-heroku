@@ -1,1 +1,1 @@
-web: python2 server.py 8080
+web: python2 server.py 80
