@@ -1,1 +1,1 @@
-web: python2 server.py http://urltoimg.herokuapp.com:8080
+web: python2 server.py urltoimg.herokuapp.com:8080
