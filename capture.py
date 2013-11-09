@@ -3,8 +3,8 @@
 from subprocess import Popen, PIPE
 
 def urltoimg(url):
-    std = Popen("export PATH=$PATH:/app/bin/", stdout=PIPE, shell=True).stdout.read()
     stdout = Popen("bin/phantomjs screencapture.js "+url, stdout=PIPE, shell=True).stdout.read()
+    return 'capture-'+stdout.encode('utf-8').strip()+'.png'
 
 def main(url):
 	urltoimg(url)

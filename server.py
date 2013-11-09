@@ -16,9 +16,11 @@ app = web.application(urls, globals())
 class get_screenshot:
     def GET(self):
         get_params = web.input()
-        urltoimg(get_params['url'])
+        filename = urltoimg(get_params['url'])
         web.header("Content-Type", "images/png") # Set the Header
-        return open('capture.png',"rb").read() # Notice 'rb' for reading images
+        #return open('capture.png',"rb").read() # Notice 'rb' for reading images
+        
+        raise web.seeother('static'+'/'+filename)
 
 if __name__ == '__main__':
     app.run()

@@ -7,6 +7,12 @@ else {
 }
 var page = require('webpage').create();
 page.open(url, function () {
-    page.render('capture.png');
+	//page.zoomFactor = 0.25;
+	page.viewportSize = { width: 960, height: 600 };
+	page.clipRect = { top: 0, left: 0, width: 960, height: 600 };
+	var title = page.title;
+	var filename = url.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    page.render('static/capture-'+filename+'.png');
+    console.log(filename);
     phantom.exit();
 });
