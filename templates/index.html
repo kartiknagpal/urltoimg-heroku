@@ -1,0 +1,36 @@
+$def with (form, title)
+ 
+<!doctype html>
+ 
+<html>
+ 
+    <head>
+        <title>$title</title>
+         
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+         
+        <script type="text/javascript">
+        	function getImage () {
+        		var BASE64_IMAGE_REST_URL = window.location.origin+"/urltoimg?url="+$$("input#url").val()+"&base64=true";
+        		console.log(BASE64_IMAGE_REST_URL);
+        		var request = $$.ajax({ 
+					url : BASE64_IMAGE_REST_URL, 
+					processData : false
+				});
+				request.done(function(b64data){
+					$$("img#screenShot").attr("src", "data:image/png;base64,"+b64data);
+				});
+        	}
+        </script>
+    </head>
+     
+    <body>
+        <br>
+        $:form.render()
+        <a href="#" id="getScreenshot" class="button" onclick="getImage()"> Submit </a>  
+ 
+        <br><br>
+        <img id="screenShot" src="">       
+    </body>
+     
+</html>
