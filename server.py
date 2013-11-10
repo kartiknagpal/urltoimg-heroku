@@ -21,6 +21,7 @@ class get_screenshot:
     def GET(self):
 		get_params = web.input()
 		filename = urltoimg(get_params['url'])
+		print filename
 		web.header("Content-Type", "images/png")
 		if 'attachment' in get_params and get_params['attachment'].lower() == 'true':
 			web.header('Content-Disposition', 'attachment; filename='+filename)

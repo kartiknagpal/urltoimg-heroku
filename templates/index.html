@@ -12,6 +12,7 @@ $def with (form, title)
         <script type="text/javascript">
         	function getImage () {
         		var BASE64_IMAGE_REST_URL = window.location.origin+"/urltoimg?url="+$$("input#url").val()+"&base64=true";
+        		$$("img#screenShot").attr("src","http://jimpunk.net/Loading/wp-content/uploads/loading1.gif");
         		console.log(BASE64_IMAGE_REST_URL);
         		var request = $$.ajax({ 
 					url : BASE64_IMAGE_REST_URL, 
@@ -19,6 +20,9 @@ $def with (form, title)
 				});
 				request.done(function(b64data){
 					$$("img#screenShot").attr("src", "data:image/png;base64,"+b64data);
+				});
+				request.fail(function(){
+					$$(document.body).append("<p style='color:tomato;'>Failed to fetch Screenshot, try later.</p>");
 				});
         	}
         </script>
