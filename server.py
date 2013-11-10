@@ -20,8 +20,9 @@ my_form = web.form.Form(web.form.Textbox('', class_='textfield', id='url'),)
 class get_screenshot:
     def GET(self):
 		get_params = web.input()
+		print 'requested url: '+get_params['url']
 		filename = urltoimg(get_params['url'])
-		print filename
+		print 'filename retrieved: '+filename
 		web.header("Content-Type", "images/png")
 		if 'attachment' in get_params and get_params['attachment'].lower() == 'true':
 			web.header('Content-Disposition', 'attachment; filename='+filename)
