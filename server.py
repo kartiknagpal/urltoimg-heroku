@@ -15,7 +15,7 @@ urls = (
 
 app = web.application(urls, globals())
 render = web.template.render('templates/')
-my_form = web.form.Form(web.form.Textbox('', class_='textfield', id='url'),)
+my_form = web.form.Form(web.form.Textbox('', class_='textfield', id='url', placeholder='Paste any url here & click submit', style='width:500px;'),)
 
 class get_screenshot:
     def GET(self):
