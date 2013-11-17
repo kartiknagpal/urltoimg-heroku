@@ -1,4 +1,0 @@
-2013-11-17 16:10:03,856 - url2img - INFO - requested url: http://stackoverflow.com/questions/415511/how-to-get-current-time-in-python
-2013-11-17 16:10:10,773 - url2img - INFO - filename stored(stdout phantomjs): http___stackoverflow_com_questions_415511_how_to_get_current_time_in_python
-
-2013-11-17 16:10:10,773 - url2img - INFO - filename retrieved: capture-http___stackoverflow_com_questions_415511_how_to_get_current_time_in_python.png

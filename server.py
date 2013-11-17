@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from dependencies import web
 from capture import urltoimg
-from logger import lgr
-import base64
+from datetime import datetime
+import base64, sys
 #import xml.etree.ElementTree as ET
 # tree = ET.parse('acess_key.xml')
 # root = tree.getroot()
@@ -20,9 +20,11 @@ my_form = web.form.Form(web.form.Textbox('', class_='textfield', id='url', place
 class get_screenshot:
     def GET(self):
 		get_params = web.input()
-		lgr.info('requested url: '+get_params['url'])
+		print datetime.now()+' - requested url: '+get_params['url']
+		sys.stdout.flush()
 		filename = urltoimg(get_params['url'])
-		lgr.info('filename retrieved: '+filename)
+		print datetime.now()+' - filename retrieved: '+filename
+		sys.stdout.flush()
 		web.header("Content-Type", "images/png")
 		if 'attachment' in get_params and get_params['attachment'].lower() == 'true':
 			web.header('Content-Disposition', 'attachment; filename='+filename)
