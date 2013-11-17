@@ -20,6 +20,7 @@ $def with (form, title)
 				});
 				request.done(function(b64data){
 					$$("img#screenShot").attr("src", "data:image/png;base64,"+b64data);
+                    console.log(b64data);
 				});
 				request.fail(function(){
 					$$(document.body).append("<p style='color:tomato;'>Failed to fetch Screenshot, try later.</p>");
