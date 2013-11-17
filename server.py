@@ -20,10 +20,10 @@ my_form = web.form.Form(web.form.Textbox('', class_='textfield', id='url', place
 class get_screenshot:
     def GET(self):
 		get_params = web.input()
-		print datetime.now()+' - requested url: '+get_params['url']
+		print str(datetime.now())+' - requested url: '+get_params['url']
 		sys.stdout.flush()
 		filename = urltoimg(get_params['url'])
-		print datetime.now()+' - filename retrieved: '+filename
+		print str(datetime.now())+' - filename retrieved: '+filename
 		sys.stdout.flush()
 		web.header("Content-Type", "images/png")
 		if 'attachment' in get_params and get_params['attachment'].lower() == 'true':

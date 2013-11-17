@@ -5,7 +5,7 @@ import sys
 
 def urltoimg(url):
     stdout = Popen("bin/phantomjs screencapture.js "+url, stdout=PIPE, shell=True).stdout.read()
-    print datetime.now()+' - filename stored(stdout phantomjs): '+stdout
+    print str(datetime.now())+' - filename stored(stdout phantomjs): '+stdout
     sys.stdout.flush()
     return 'capture-'+stdout.encode('utf-8').strip()+'.png'
 
